@@ -19,3 +19,5 @@ After it's done compiling it will take 15 seconds to kickstart the malware to gi
 Here's what happens next:
 
 ![In Action](inaction.gif)
+
+Note that this does not require any ugly `-ExecutionPolicy permissive` flags or the like, just a C2 hosting the PS Script.
