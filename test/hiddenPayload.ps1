@@ -1,0 +1,1 @@
+Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show("Evil Fileless malware is now running!");
