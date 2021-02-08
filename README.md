@@ -20,4 +20,7 @@ Here's what happens next:
 
 ![In Action](inaction.gif)
 
+What you see is the Firmware being compiled, the reset pin is triggered (as if the device gets disconnected and reconnected), and then the 15 seconds timeframe + the payload.
+
 Note that this does not require any ugly `-ExecutionPolicy permissive` flags or the like, just a C2 hosting the PS Script.
+
